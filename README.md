@@ -1,16 +1,11 @@
 # imc_app
 
-A new Flutter project.
+ - Descrição: 
+Calcular o IMC - Índice de Massa Corpórea, e determinar a partir do valor calculado em qual faixa de interpretação a pessoa se encontra
 
-## Getting Started
+- Gabriel Forza Vago / Matricula: 12317003
 
-This project is a starting point for a Flutter application.
+- Capturas de telas do aplicativo:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![tela1](https://github.com/user-attachments/assets/7f7945d3-6fa8-4637-8627-1fba85c13040)
+![tela2](https://github.com/user-attachments/assets/570b5059-7abd-474e-b95c-cb67c708c884)
