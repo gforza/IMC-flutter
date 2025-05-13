@@ -12,33 +12,74 @@ class ResultadoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Resultado do IMC'),
+        backgroundColor: Color(resultado['cor']),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Seu IMC é: ${imc.toStringAsFixed(2)}',
-                style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color(resultado['cor']),
+                  width: 4,
+                ),
+                borderRadius: BorderRadius.circular(24),
               ),
-              const SizedBox(height: 24),
-              Text(
-                'Classificação: ${resultado['classificacao']}',
-                style: const TextStyle(fontSize: 22),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    imc.toStringAsFixed(1),
+                    style: TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                      color: Color(resultado['cor']),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Classificação: ${resultado['classificacao']}',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: Color(resultado['cor']),
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  Text(
+                    resultado['mensagem'],
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      height: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-              const SizedBox(height: 12),
-              Text(
-                'Obesidade (grau): ${resultado['grau']}',
-                style: const TextStyle(fontSize: 22),
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () => Navigator.pop(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(resultado['cor']),
+              padding: const EdgeInsets.symmetric(vertical: 16),
+            ),
+            child: const Text(
+              'Calcular novamente',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
               ),
-              const SizedBox(height: 32),
-              ElevatedButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('Calcular novamente'),
-              ),
-            ],
+            ),
           ),
         ),
       ),
